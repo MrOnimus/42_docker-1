@@ -1,0 +1,8 @@
+docker run --name Abathur -v ~/:/root -p 3000:3000 -dit python:2-slim
+docker exec -it Abathur bash
+pip install --upgrade pip && pip install flask python-dotenv
+apt update -y && apt upgrade -y && apt install vim -y
+mkdir -p /root/Documents/flask_hw && cd /root/Documents/flask_hw
+echo -e 'FLASK_APP=main.py\nFLASK_RUN_PORT=3000\nFLASK_RUN_HOST=0.0.0.0\nFLASK_DEBUG=1' > .flaskenv
+echo -e 'from flask import Flask\napp = Flask(__name__)\n\n@app.route("/")\ndef hello_world():\n\treturn """<h1>Hello, world!</h1>"""' > main.py
+flask run

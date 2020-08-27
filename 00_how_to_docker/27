@@ -1,0 +1,1 @@
+docker service logs -tf v5j68wxowa8a
