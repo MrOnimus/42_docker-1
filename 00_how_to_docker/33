@@ -1,1 +1,1 @@
-docker rmi -f $(docker images --format "{{ .ID }}")
+docker rmi $(docker images -aq)
